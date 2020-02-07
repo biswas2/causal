@@ -1,0 +1,12 @@
+Package: causal
+Type: Package
+Title: Calculate the measures of causal effects for conditionally randomized experiments
+Version: 0.1.0
+Author: Md Rasel Biswas
+Maintainer: Md Rasel Biswas <rbiswas1@isrt.ac.bd>
+Description: The functions from this package helps compute the causal risk measures in a conditionally randomized experiment.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Imports: dplyr
