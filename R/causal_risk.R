@@ -18,7 +18,7 @@
 #' causal_risk(A = A, L = L, Y = Y)
 #' causal_risk(data = romans) # both are correct
 #'
-#' @import 'dplyr'
+#' @import dplyr
 #' @export
 
 causal_risk <- function(A, L, Y, data = NULL) {
