@@ -24,12 +24,12 @@
 causal_risk <- function(A, L, Y, data = NULL) {
   ifelse(
     is.null(data),
-    dat <- data.frame(A = as.double(A), L = as.double(L), Y = as.double(Y)),
-    dat <- data.frame(A = as.double(data$A),
-                      L = as.double(data$L),
-                      Y = as.double(data$Y))
+    dat <- data.frame(A = as.factor(A), L = as.factor(L), Y = as.factor(Y)),
+    dat <- data.frame(A = as.factor(data$A),
+                      L = as.factor(data$L),
+                      Y = as.factor(data$Y))
   )
-  prob <- dplyr::summarise(dplyr::group_by(dat, A, L), m = mean(Y))
+  prob <- dplyr::summarise(dplyr::group_by(dat, A, L), m =  sum(Y == 1) / n())
   risk_in_treated <-
     prop.table(table(dat$L)) %*% as.matrix(prob$m[prob$A == 1])
   risk_in_non_treated <-
